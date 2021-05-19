@@ -53,7 +53,7 @@ const Course = ({ match, history }) => {
       <h2>Course</h2>
       <form className="input-form">
         <div style={{ margin: "12px 0" }}>
-          <label htmlFor="name">Course name: </label>
+          <label htmlFor="name">Course name:</label>
           <input
             type="text"
             name="name"
