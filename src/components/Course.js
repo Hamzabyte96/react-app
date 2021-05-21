@@ -60,15 +60,21 @@ const Course = ({ match, history }) => {
             value={course.name}
             onChange={changeHandler}
           />
+          <span hidden={course.name} style={{ color: "red" }}>
+            Course Name cannot be empty
+          </span>
         </div>
         <div style={{ margin: "12px 0" }}>
           <label htmlFor="points">Course points:</label>
           <input
-            type="text"
+            type="number"
             name="points"
             value={course.points}
             onChange={changeHandler}
           />
+          <span hidden={course.points} style={{ color: "red" }}>
+            Course Points cannot be empty
+          </span>
         </div>
         <hr />
         {id !== "0" && (
@@ -84,7 +90,11 @@ const Course = ({ match, history }) => {
             BACK
           </button>
           &nbsp;&nbsp;
-          <button type="button" onClick={save}>
+          <button
+            type="button"
+            disabled={!course.name || !course.points}
+            onClick={save}
+          >
             SAVE
           </button>
         </div>
